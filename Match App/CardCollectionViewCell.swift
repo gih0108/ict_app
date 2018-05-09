@@ -18,4 +18,4 @@ class CardCollectionViewCell: UICollectionViewCell {
 
 
 
-//ha...
+//heehee 
