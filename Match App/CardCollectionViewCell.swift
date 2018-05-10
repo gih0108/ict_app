@@ -17,5 +17,3 @@ class CardCollectionViewCell: UICollectionViewCell {
 }
 
 
-
-//heehee 
