@@ -87,11 +87,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 // This is the second card being flipped
                 
                 // TODO : Peform the matching logic
-                // Flip the card back
-                cell.flipBack()
+                checkForMatches(indexPath)
                 
-                // Set the status of the card
-                card.isFlipped = false
             }
         }
         
@@ -112,6 +109,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Compare the two cards
         if cardOne.imageName == cardTwo.imageName {
+            
             // It's a match
             
             // Set the statuese of the cards
@@ -126,9 +124,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // It's not a match
             
-            // Set the statuese of the cards
+            // Set the statuses of the cards
+            cardOne.isFlipped = false
+            cardTwo.isFlipped = false
             
             // Flip both cards back
+            cardOneCell?.flipBack()
+            cardTwoCell?.flipBack()
         }
         
         firstFlippedCardIndex = nil
