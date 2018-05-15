@@ -15,7 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var model = CardModel()
     var cardArray = [Card]()
     
-    var firstFlippedCard:IndexPath?
+    var firstFlippedCardIndex:IndexPath?
     
     var firstFlippedCardIndex:IndexPath?
 
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Get the card that the user selected
         let card = cardArray[indexPath.row]
         
-        if card.isFlipped == false && card.isMatched == false {
+        if card.isFlipped == false {
             
             // Flip the card
             cell.flip()
@@ -79,10 +79,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             
             if firstFlippedCardIndex == nil {
+                
                 // This is the first card being flipped
                 firstFlippedCard = indexPath
+            }
+            else{
                 
-            }else{
+                // This is the second card being flipped
+                
+                // TODO : Peform the matching logic
                 // Flip the card back
                 cell.flipBack()
                 
@@ -91,8 +96,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
         }
         
+    } // End the didSelectItemAt method
+    
+    // Mark : - Game Logic Methods
+    
+    func checkForMatches(_ secondFlippedCardIndex:IndexPath){
+        
     }
 
 
-}
+} // End ViewController class
 
