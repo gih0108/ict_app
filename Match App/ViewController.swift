@@ -17,7 +17,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var firstFlippedCardIndex:IndexPath?
     
-    var firstFlippedCardIndex:IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +80,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             if firstFlippedCardIndex == nil {
                 
                 // This is the first card being flipped
-                firstFlippedCard = indexPath
+                firstFlippedCardIndex = indexPath
             }
             else{
                 
@@ -102,6 +101,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func checkForMatches(_ secondFlippedCardIndex:IndexPath){
         
+        // Get the cells for the two card that were revealed
+        let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCollectionViewCell
+        
+        let cardTwoCell = collectionView.cellForItem(at: secondFlippedCardIndex) as? CardCollectionViewCell
+        
+        // Get the cards for the two cards that were revealed
+        let cardOne = cardArray[firstFlippedCardIndex!.row]
+        let cardTwo = cardArray[secondFlippedCardIndex.row]
+        
+        // Compare the two cards
+        cardOne.imageName == cardTwo.imageName {
+            // It's a match
+            
+            // Set the statuese of the cards
+            
+            // Remove the cards from the grid
+        }
+        else{
+            
+            // It's not a match
+            
+            // Set the statuese of the cards
+            
+            // Flip both cards back
+        }
+        
+        firstFlippedCardIndex = nil
     }
 
 
