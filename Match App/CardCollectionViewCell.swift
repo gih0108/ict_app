@@ -22,7 +22,10 @@ class CardCollectionViewCell: UICollectionViewCell {
         // Keep track of the card that gets passed in
         self.card = card
         
+        
         if card.isMatched == true {
+            
+            // If the card hasn't been matched, then make the image views invisible
             backImageView.alpha = 0
             frontImageView.alpha = 0
             
@@ -30,6 +33,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
         else{
             
+            // If the card hasn't been matched, then make the image views visible
             backImageView.alpha = 1
             frontImageView.alpha = 1
         }

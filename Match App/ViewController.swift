@@ -133,6 +133,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cardTwoCell?.flipBack()
         }
         
+        // Tell the collectionView to reload the cell of the first card if it is nil
+        if cardOneCell == nil {
+            collectionView.reloadItems(at: [firstFlippedCardIndex!])
+        }
+        
+        
+        // Reset the property that tracks the first card flipped
         firstFlippedCardIndex = nil
     }
 
