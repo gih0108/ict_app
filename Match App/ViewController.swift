@@ -111,12 +111,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cardTwo = cardArray[secondFlippedCardIndex.row]
         
         // Compare the two cards
-        cardOne.imageName == cardTwo.imageName {
+        if cardOne.imageName == cardTwo.imageName {
             // It's a match
             
             // Set the statuese of the cards
+            cardOne.isMatched = true
+            cardTwo.isMatched = true
             
             // Remove the cards from the grid
+            cardOneCell?.remove()
+            cardTwoCell?.remove()
         }
         else{
             
