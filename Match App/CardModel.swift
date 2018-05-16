@@ -50,9 +50,18 @@ class CardModel {
             }
         }
         
-        // TODO : Randomize the array
-        generatedCardsArray[0] = generatedCardsArray[1]
-        generatedCardsArray[1] = generatedCardsArray[0]
+        // Randomize the array
+        
+        for _ in 0...generatedCardsArray.count-1  {
+        
+            // Find a random index to swap with
+            let randomNumber = Int(arc4random_uniform(UInt32(generatedCardsArray.count)))
+            
+            // Swap the two cards
+            let temporaryStorage = generatedCardsArray[0]
+            generatedCardsArray[0] = generatedCardsArray[randomNumber]
+            generatedCardsArray[randomNumber] = temporaryStorage
+        }
         
         // Return the array
         return generatedCardsArray
