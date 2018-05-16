@@ -21,8 +21,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var firstFlippedCardIndex:IndexPath?
     
     var timer:Timer?
+    var milliseconds:Float = 10 * 1000 // 10 seconds
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +46,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @objc func timerElapsed() {
         
+        milliseconds -= 1
+        
+        // Convert to seconds
+        let seconds = String(format: "%.2f", milliseconds/1000)
+        
+        // Set label
+        timerLabel.text = "Time Remaining: \(seconds)"
     }
     
     // Mark: - UICollectionView Protocol Methods
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return cardArray.count
