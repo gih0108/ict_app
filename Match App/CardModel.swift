@@ -51,6 +51,8 @@ class CardModel {
         }
         
         // TODO : Randomize the array
+        generatedCardsArray[0] = generatedCardsArray[1]
+        generatedCardsArray[1] = generatedCardsArray[0]
         
         // Return the array
         return generatedCardsArray
