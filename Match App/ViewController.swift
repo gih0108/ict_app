@@ -190,18 +190,40 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
         }
         
+        
+        // Messaging variables
+        var title = ""
+        var message = ""
+        
         // If not, then user has won, stop the timer
         if isWon == true {
             
+            if milliseconds > 0 {
+                timer?.invalidate()
+            }
             
-            
+            titme = "Congratulations!"
+            message = "You've won"
         }
         else {
             // If there are unmatched cards, check if there's any time left
+            
+            if milliseconds > 0 {
+                return
+            }
+            
+            title = "Game over"
+            message = "You've lost"
         }
         
         
         // Show won/lost messaging
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title:"Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 
 
