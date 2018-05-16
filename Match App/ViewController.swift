@@ -54,10 +54,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Set label
         timerLabel.text = "Time Remaining: \(seconds)"
         
-        
         // When the timer has reached 0...
         if milliseconds <= 0 {
+            
+            // Stop the timer
             timer?.invalidate()
+            timerLabel.textColor = UIColor.red
+            
+            // Check if there are any cards unmatched
+            checkGameEnded()
         }
     }
     
@@ -147,6 +152,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // Remove the cards from the grid
             cardOneCell?.remove()
             cardTwoCell?.remove()
+            
+            // Check if there are any cards left unmatched
+            checkGameEnded()
         }
         else{
             
@@ -169,6 +177,31 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Reset the property that tracks the first card flipped
         firstFlippedCardIndex = nil
+    }
+    
+    func checkGameEnded() {
+        // Determine if there are any cards unmatched
+        var isWon = true
+        
+        for card in cardArray {
+            if card.isMatched == false {
+                isWon = false
+                break
+            }
+        }
+        
+        // If not, then user has won, stop the timer
+        if isWon == true {
+            
+            
+            
+        }
+        else {
+            // If there are unmatched cards, check if there's any time left
+        }
+        
+        
+        // Show won/lost messaging
     }
 
 
