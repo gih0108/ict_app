@@ -33,7 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         
         // Create timer
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: <#T##Any#>, selector: <#T##Selector#>, userInfo: <#T##Any?#>, repeats: <#T##Bool#>)
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // Mark : -Timer Mthods
     
-    func timerElapsed() {
+    @objc func timerElapsed() {
         
     }
     
