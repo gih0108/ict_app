@@ -13,33 +13,41 @@ class CardModel {
     
     func getCards() -> [Card] {
         
+        // Declare the array to store numbers we've already generated
+        var generateNumbersArray = [Int]()
+        
         // Declare an array to store the generated cards
         var generatedCardsArray = [Card]()
     
         
         // Randomly generate pairs of cards
-        for _ in 1...8 {
+        while generateNumbersArray.count < 8 {
             
             //Get a random number
             let randomNumber = arc4random_uniform(13) + 1
             
-            // Log the number
-            print(randomNumber)
-            
-            // Create the first card object
-            let cardOne = Card()
-            cardOne.imageName = "card\(randomNumber)"
-            
-            // Add the created card
-            generatedCardsArray.append(cardOne)
-            
-            // Create the second card object
-            let cardTwo = Card()
-            cardTwo.imageName = "card\(randomNumber)"
-            
-            generatedCardsArray.append(cardTwo)
-            
-            // OPTIONAL : Make it so we only have unique pairs of cards
+            // Ensure that the random number isn't one we already have
+            if generateNumbersArray.contains(Int(randomNumber)) == false {
+                
+                // Log the number
+                print(randomNumber)
+                
+                // Store the number into the generatedNumberArray
+                generateNumbersArray.append(Int(randomNumber))
+                
+                // Create the first card object
+                let cardOne = Card()
+                cardOne.imageName = "card\(randomNumber)"
+                
+                // Add the created card
+                generatedCardsArray.append(cardOne)
+                
+                // Create the second card object
+                let cardTwo = Card()
+                cardTwo.imageName = "card\(randomNumber)"
+                
+                generatedCardsArray.append(cardTwo)
+            }
         }
         
         // TODO : Randomize the array
