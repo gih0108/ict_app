@@ -40,7 +40,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidAppear(_ animated: Bool) {
         
-        SoundManager.playSound(.shuffle)
+        soundManager.playSound(.shuffle)
         
     }
 
@@ -116,6 +116,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // Flip the card
             cell.flip()
+            
+            // Play the flip sound
+            soundManager.playSound(.flip)
             
             // Set the status of the card
             card.isFlipped = true
