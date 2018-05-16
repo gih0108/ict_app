@@ -43,5 +43,29 @@ class SoundManager {
             soundFilename = "dingwrong"
         }
         
+        
+        // Get the path to the sound file inside the bundle
+        let bundlePath = Bundle.main.path(forResource: soundFilename, ofType: "wav")
+        
+        guard bundlePath != nil else {
+            print("Couldn't find sound file \(soundFilename) in the bundle")
+            return
+        }
+        
+        // Create a URL object from this string path
+        let soundURL = URL(fileURLWithPath: bundlePath!)
+        
+        do {
+            // Create audio player object
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            
+            // Play the sound
+            audioPlayer?.play()
+        }
+        catch {
+            // Couldn't create audio player object, log the error
+            print("Couldn't create the audio player object for sound file \(soundFilename)")
+        }
+        
     }
 }

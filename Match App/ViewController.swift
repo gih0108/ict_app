@@ -22,6 +22,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var timer:Timer?
     var milliseconds:Float = 10 * 1000 // 10 seconds
     
+    var soundManager = SoundManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Create timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .commonModes)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        SoundManager.playSound(.shuffle)
+        
     }
 
     override func didReceiveMemoryWarning() {
