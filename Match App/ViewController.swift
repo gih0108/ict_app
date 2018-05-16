@@ -12,7 +12,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var timerLabel: UILabel!
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var model = CardModel()
@@ -34,6 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Create timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .commonModes)
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +53,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Set label
         timerLabel.text = "Time Remaining: \(seconds)"
+        
+        
+        // When the timer has reached 0...
+        if milliseconds <= 0 {
+            timer?.invalidate()
+        }
     }
     
     // Mark: - UICollectionView Protocol Methods
