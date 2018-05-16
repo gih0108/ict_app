@@ -10,12 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var model = CardModel()
     var cardArray = [Card]()
     
     var firstFlippedCardIndex:IndexPath?
+    
+    var timer:Timer?
     
 
     override func viewDidLoad() {
@@ -26,11 +31,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        // Create timer
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: <#T##Any#>, selector: <#T##Selector#>, userInfo: <#T##Any?#>, repeats: <#T##Bool#>)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+    }
+    
+    // Mark : -Timer Mthods
+    
+    func timerElapsed() {
         
     }
     
