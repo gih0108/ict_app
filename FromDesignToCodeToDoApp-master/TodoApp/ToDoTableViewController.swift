@@ -191,7 +191,7 @@ class ToDoTableViewController: UITableViewController, MCSessionDelegate, MCBrows
             let todoItem = self.todoItems[indexPath.row]
             self.sendTodo(todoItem)
         }
-        shareAction.backgroundColor = UIColor(named: "mainBlueColor")
+        shareAction.backgroundColor = UIColor(named: "mainOrangeColor")
         
         let deleteAction = UITableViewRowAction(style: .normal
         , title: "Delete") { (action:UITableViewRowAction, indexPath:IndexPath) in
@@ -199,7 +199,7 @@ class ToDoTableViewController: UITableViewController, MCSessionDelegate, MCBrows
             self.todoItems.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        deleteAction.backgroundColor = UIColor(named: "mainYellowColor")
+        deleteAction.backgroundColor = UIColor(named: "mainSalmonColor")
         
         return [deleteAction, shareAction]
         

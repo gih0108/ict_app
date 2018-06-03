@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PJA-gm-KPD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PJA-gm-KPD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                         <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="Cbg-sF-5yc">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="progressTintColor" name="mainBlueColor"/>
+                            <color key="progressTintColor" name="mainSalomColor"/>
                             <color key="trackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </progressView>
                         <prototypes>
@@ -93,15 +93,19 @@
                                     <segue destination="J2Z-Tv-Bud" kind="embed" identifier="TodoVC" id="Jna-mt-Wbl"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYR-co-qsU">
-                                <rect key="frame" x="16" y="619" width="97" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HGU daily task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYR-co-qsU">
+                                <rect key="frame" x="16" y="618" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" red="0.76676067790000002" green="0.76676067790000002" blue="0.76676067790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor">
+                                    <string key="name" base64-UTF8="YES">
+bWFpbhBPcmFuYWdlQ29sb3I
+</string>
+                                </color>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXy-Uv-VNE">
                                 <rect key="frame" x="313" y="605" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.82745098039999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mainSalomColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UPN-87-9Zd"/>
                                     <constraint firstAttribute="width" constant="40" id="u0t-An-iSx"/>
@@ -115,35 +119,22 @@
                                     <action selector="addNewTodoItem:" destination="PJA-gm-KPD" eventType="touchUpInside" id="1e8-oh-JKF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09W-fE-8JP">
-                                <rect key="frame" x="123" y="612" width="54" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Offline">
-                                    <color key="titleColor" red="1" green="0.74901960779999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="triggerConnection:" destination="PJA-gm-KPD" eventType="touchUpInside" id="ukj-Kw-x0I"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hkz-gm-hgF" firstAttribute="trailing" secondItem="SXy-Uv-VNE" secondAttribute="trailing" constant="22" id="B0l-1G-YI3"/>
                             <constraint firstItem="hkz-gm-hgF" firstAttribute="top" secondItem="eZm-hE-YdL" secondAttribute="top" constant="20" id="ElP-o5-jxP"/>
-                            <constraint firstItem="09W-fE-8JP" firstAttribute="leading" secondItem="NYR-co-qsU" secondAttribute="trailing" constant="10" id="FO1-J9-0bq"/>
                             <constraint firstItem="hkz-gm-hgF" firstAttribute="trailing" secondItem="eZm-hE-YdL" secondAttribute="trailing" id="GQN-MV-rWi"/>
                             <constraint firstItem="hkz-gm-hgF" firstAttribute="bottom" secondItem="NYR-co-qsU" secondAttribute="bottom" constant="27" id="ILQ-T2-jLk"/>
                             <constraint firstItem="NYR-co-qsU" firstAttribute="leading" secondItem="hkz-gm-hgF" secondAttribute="leading" constant="16" id="Rtm-gV-hUM"/>
                             <constraint firstItem="hkz-gm-hgF" firstAttribute="bottom" secondItem="SXy-Uv-VNE" secondAttribute="bottom" constant="22" id="XBi-WP-14W"/>
                             <constraint firstItem="NYR-co-qsU" firstAttribute="top" secondItem="eZm-hE-YdL" secondAttribute="bottom" constant="29" id="hss-q3-L1D"/>
-                            <constraint firstItem="09W-fE-8JP" firstAttribute="centerY" secondItem="NYR-co-qsU" secondAttribute="centerY" constant="-1" id="jmW-fx-jd7"/>
                             <constraint firstItem="eZm-hE-YdL" firstAttribute="leading" secondItem="hkz-gm-hgF" secondAttribute="leading" id="uPv-Uw-4ve"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hkz-gm-hgF"/>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="SXy-Uv-VNE" id="9V3-M1-1ik"/>
-                        <outlet property="connectionButton" destination="09W-fE-8JP" id="dv7-Zh-Grd"/>
                         <outlet property="containerView" destination="eZm-hE-YdL" id="8id-Bi-qZ5"/>
                     </connections>
                 </viewController>
@@ -153,8 +144,14 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="mainBlueColor">
-            <color red="0.0" green="0.82700002193450928" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor>
+            <string key="name" base64-UTF8="YES">
+bWFpbhBPcmFuYWdlQ29sb3I
+</string>
+            <color red="1" green="0.61799997091293335" blue="0.47400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainSalomColor">
+            <color red="1" green="0.49300000071525574" blue="0.47400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
